@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  mongodb:
+    image: 'docker.io/bitnami/mongodb:4.4-debian-10'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27047:27017"
+    volumes:
+      - './mongodb_data:/bitnami/mongodb'
+
+volumes:
+  mongodb_data:
+    driver: local
